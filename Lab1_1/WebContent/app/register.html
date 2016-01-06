@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Eventy | Register</title>
+<link rel="stylesheet" type="text/css"
+	href="../vendor/css/Normalize.3.0.2.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+	<div id="headerArea">
+		<nav id="navNotLoggedIn"></nav>
+		<header id="header"></header>
+	</div>
+	<div id="main">
+
+		<form name="registerForm" action="submit">
+			<p id="userInfo">
+				<input required type="text" placeholder="email" name="email">
+				<input required type="text" placeholder="username" name="username">
+				<input required type="password" placeholder="password"
+					name="password"> <input required type="password"
+					placeholder="confirm password" name="confirmPassword"> <input
+					required type="text" placeholder="state (i.e. GA)" name="state"
+					maxlength="2">
+			</p>
+
+			<p id="events">
+				Events you're interested in? <br> <input type="checkbox"
+					name="eventType" value="reunions"> <label for="reunions">Reunions</label>
+
+				<input type="checkbox" name="eventType" value="dinners"> <label
+					for="dinners">Dinners</label> <input type="checkbox"
+					name="eventType" value="receptions"> <label
+					for="receptions">Receptions</label> <input type="checkbox"
+					name="eventType" value="award shows"> <label
+					for="award shows">Award Shows</label> <input type="checkbox"
+					name="eventType" value="job fairs"> <label for="job fairs">Job
+					Fairs</label> <input type="checkbox" name="eventType" value="meetings">
+				<label for="meetings">Meetings</label>
+			</p>
+
+			<p id="mailingList">
+				Would you like to join our mailing list? <label>Yes <input
+					required type="radio" checked name="subscribe"></label> <label>No
+					<input required type="radio" name="subscribe">
+				</label>
+			</p>
+
+			<button onclick="validateFields()">Register</button>
+			<button type="reset">Reset Form</button>
+		</form>
+
+	</div>
+	<footer id="footer"></footer>
+</body>
+
+<script type="text/javascript" src="../vendor/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>

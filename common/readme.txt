@@ -1,0 +1,1 @@
+Resource files should go here, e.g., properties files, etc.

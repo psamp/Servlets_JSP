@@ -1,0 +1,1 @@
+This is the IDE workspace.  Project directories should go here.
