@@ -17,8 +17,7 @@ public class UserAuth extends HttpServlet {
 		super.init(config);
 		System.out.println("In UserAuth init.");
 	}
-	
-	
+
 	@Override
 	public void destroy() {
 		super.destroy();
@@ -38,7 +37,8 @@ public class UserAuth extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		StringBuffer message = new StringBuffer();
 
-		if ("ash".equals(user.trim()) && "pokemon".equals(pass.trim())) {
+		if (this.getInitParameter("adminUser").equals(user.trim())
+				&& this.getInitParameter("adminPass").equals(pass.trim())) {
 			message.append("<html>");
 			message.append("<p color='green'>");
 			message.append("You have successfully logged in, " + user + ".");

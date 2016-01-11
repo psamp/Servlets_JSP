@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+form {
+	width: 450px;
+}
+
+.pass {
+	color: green;
+}
+
+.fail {
+	color: red;
+}
