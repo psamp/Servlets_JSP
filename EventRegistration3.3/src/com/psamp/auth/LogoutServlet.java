@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ntier.provided.User;
+
 /**
  * Servlet implementation class LogoutServlet
  */
@@ -32,13 +34,14 @@ public class LogoutServlet extends HttpServlet {
 			out.println("</p>");
 			out.println("</html>");
 		} else {
-			session.invalidate();
 
 			out.println("<html>");
 			out.println("<p>");
-			out.println("You are logged out.");
+			out.println("You are logged out, " + ((User) session.getAttribute("user")).getUsername());
 			out.println("</p>");
 			out.println("</html>");
+
+			session.invalidate();
 		}
 
 	}

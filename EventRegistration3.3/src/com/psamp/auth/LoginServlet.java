@@ -42,30 +42,29 @@ public class LoginServlet extends HttpServlet {
 		StringBuffer message = new StringBuffer();
 		HttpSession session = request.getSession();
 
-		boolean login = db.containsUser(username) && password.equals(db.getUser(username).getPassword());
+		message.append("<html>");
+		message.append("<p>");
 
-		synchronized (this) {
+		synchronized (db) {
 
-			if (login) {
+			if (request.getSession().getAttribute("user") != null) {
+
+				message.append("You are already logged in.");
+
+			} else if (db.containsUser(username) && password.equals(db.getUser(username).getPassword())) {
+
 				User usr = db.getUser(username);
-
 				session.setAttribute("user", usr);
-
-				message.append("<html>");
-				message.append("<p>");
 				message.append("You have successfully logged in, " + username + ".");
-				message.append("</p>");
-				message.append("</html>");
 
 			} else {
-				message.append("<html>");
-				message.append("<p>");
 				message.append("Please try again.");
-				message.append("</p>");
-				message.append("</html>");
 			}
 
 		}
+
+		message.append("</p>");
+		message.append("</html>");
 
 		out.println(message);
 		out.close();
