@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="com.ntier.provided.User" errorPage="error.jsp"%>
 <html>
 
 <head>
@@ -12,11 +13,18 @@
 <body>
 
 	<div id="headerArea">
-		<nav id="navNotLoggedIn"></nav>
-		<header id="header"></header>
+		<nav id="navNotLoggedIn"><jsp:include
+				page="../components/navNotLoggedIn.jsp" /></nav>
+		<header id="header"><jsp:include
+				page="../components/header.jsp" /></header>
 	</div>
 	<div id="main">
 		<div id="welcome">
+			<h2>
+				Welcome<%
+				out.print(this.welcomeUser(session));
+			%>
+			</h2>
 			<p>Chuck prosciutto frankfurter strip steak. Cow pork loin shank,
 				corned beef capicola drumstick biltong chicken swine brisket. Boudin
 				pancetta spare ribs ham hock filet mignon bresaola. Ground round
@@ -37,7 +45,15 @@
 	</div>
 	<footer id="footer"></footer>
 </body>
-
-<script type="text/javascript" src="../vendor/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
 </html>
+
+<%!private String welcomeUser(HttpSession sess) {
+		String rtn = "";
+		User usr = (User) sess.getAttribute("user");
+
+		if (usr != null) {
+			rtn = ", " + usr.getUsername();
+		}
+
+		return rtn;
+	}%>

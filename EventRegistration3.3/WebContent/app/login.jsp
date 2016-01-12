@@ -1,3 +1,4 @@
+<%@ page errorPage="error.jsp" %>
 <!DOCTYPE html>
 <html>
 
@@ -12,8 +13,10 @@
 <body>
 
 	<div id="headerArea">
-		<nav id="navNotLoggedIn"></nav>
-		<header id="header"></header>
+		<nav id="navNotLoggedIn"><jsp:include
+				page="../components/navNotLoggedIn.jsp" /></nav>
+		<header id="header"><jsp:include
+				page="../components/header.jsp" /></header>
 	</div>
 	<div id="main">
 		<div>

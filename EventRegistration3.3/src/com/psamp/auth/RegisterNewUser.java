@@ -49,7 +49,7 @@ public class RegisterNewUser extends HttpServlet {
 			db.addUser(new User(username, password, email));
 
 			resMessage = "<p>You have successfully registered.</p>";
-			resLink = "<p><a href='../app/auth.html'>Welcome Page</a></p>";
+			resLink = "<p><a href='../eventy/app'>Welcome Page</a></p>";
 		}
 
 		out.print("<html>" + resMessage);
