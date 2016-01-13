@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+form {
+	width: 450px;
+}
+
+.pass {
+	color: green;
+}
+
+.fail {
+	color: red;
+}
+
+.message {
+	color:red;
+	text-syle:italic;
+}
+
+.main {
+	width:700px;
+}
